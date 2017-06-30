@@ -1,0 +1,72 @@
+# Common configuration shared between all applications
+
+ff4j:
+    features:
+        flag1:
+            enable: false
+            flipStrategy:
+                clazz: org.ff4j.strategy.time.OfficeHourStrategy
+                params:
+                    monday: 08:00-12:00,13:30-18:00
+                    tuesday: 08:00-12:00,13:30-18:00
+        flag2:
+            description: test
+            group: yolo
+            permissions:
+                - admin
+                - user1
+                - user2
+            flipStrategy:
+                clazz: org.ff4j.strategy.DarkLaunchStrategy
+                params:
+                    ratio: 0.5
+                    weight: 0.4
+    properties:
+        prop1:
+            type: string
+            value: test
+            description: some string
+            fixedValues:
+                - test
+                - test2
+        prop2:
+            type: int
+            value: -1
+            description: some number
+        prop3:
+            type: boolean
+            value: true
+#        prop4:
+#            type: calendar
+#            value: "2017-02-15 10:00"
+        prop5:
+            type: double
+            value: 0.55
+        prop6:
+            type: loglevel
+            value: ERROR
+        prop7:
+            type: long
+            value: 100000000
+# fixedValues doesn't work for numerical types for now
+#            fixedValues:
+#                - 100000000
+#                - 1000000000
+#    webapi:
+#        authentication: false
+#        authorization: false
+
+configserver:
+    name: Docker JHipster Registry
+    status: Connected to the JHipster Registry running in Docker
+
+jhipster:
+    security:
+        authentication:
+            jwt:
+                secret: my-secret-token-to-change-in-production
+
+eureka:
+    client:
+        serviceUrl:
+            defaultZone: http://admin:admin@localhost:8761/eureka/
