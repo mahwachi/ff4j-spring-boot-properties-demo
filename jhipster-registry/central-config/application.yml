@@ -69,4 +69,4 @@ jhipster:
 eureka:
     client:
         serviceUrl:
-            defaultZone: http://admin:admin@localhost:8761/eureka/
+            defaultZone: http://admin:admin@localhost:8174/eureka/
